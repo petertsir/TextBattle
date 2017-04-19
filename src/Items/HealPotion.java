@@ -18,6 +18,7 @@ public class HealPotion extends Item{
             hero.setHealth(hero.getMaxHealth());
         }
         hero.setHealth(startHealth + healPower);
+        System.out.println(hero.getName() + " has been healed. \n" + hero.getName()+ "'s health is now: " + hero.getHealth());
     }
 
     public HealPotion(int healPower) {
@@ -26,7 +27,7 @@ public class HealPotion extends Item{
 
     @Override
     public String toString() {
-        return "HealthPotion{ " + " healPower = " + healPower + " }";
+        return "HealthPotion{" + " with the Healing Power of " + healPower + " }";
     }
 
     @Override

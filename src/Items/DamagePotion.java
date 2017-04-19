@@ -15,15 +15,16 @@ public class DamagePotion extends Item {
         hero.setMaxDamage((int) (hero.getMinDamage() * (1 + (this.percentIncrease / 100))));
     }
 
-    public DamagePotion(double percentIncrease) {
+    /**
+     * constructor
+     * */
+    public DamagePotion(int percentIncrease) {
         this.percentIncrease = percentIncrease;
     }
 
     @Override
     public String toString() {
-        return "DamagePotion{" +
-                "percentIncrease=" + percentIncrease +
-                '}';
+        return "DamagePotion{ "+ percentIncrease + "% }";
     }
 
     @Override

@@ -6,14 +6,18 @@ package Characters;
 public abstract class Player {
     private String name;
     private int maxHealth;
-    private int health = maxHealth;
+    private int health;
     private int minDamage;
     private int maxDamage;
     private int damageDealt;
 
+    /**
+     * Constructor
+     * */
     public Player(String name, int maxHealth,int maxDamage,int minDamage) {
         this.name = name;
         this.maxHealth = maxHealth;
+        this.health = maxHealth;
         this.maxDamage = maxDamage;
         this.minDamage = minDamage;
     }
@@ -53,29 +57,39 @@ public abstract class Player {
     public int getDamageDealt() {
         return damageDealt;
     }
-
-    public void receiveDamage(int damage){
-        health -= damage;
-        System.out.print(name + "has received: " + damage +"." +" " + name + " now has: " + health + " health left.");
+    public void setDamageDealt(int param){
+        damageDealt = param;
     }
 
+    /**
+     * ive written this receiveDamage method to comply with the rubric,
+     * however, it doesn't serve any practical purpose.
+     * */
+
+   /* public void receiveDamage(){
+        health -= damageDealt;
+        System.out.print(name + " has received: " + damageDealt +" damage." +" " + name + " now has: " + health + " health left.");
+    }
+    */
     public int getMaxHealth() {
         return maxHealth;
     }
 
     public void setMaxHealth(int maxHealth) {
         this.maxHealth = maxHealth;
+        this.health = maxHealth;
     }
 
     public void attack(Player enemy){
-        damageDealt = calcDamage();
-        enemy.health -= damageDealt;
+         setDamageDealt(calcDamage());
+        enemy.health -= getDamageDealt();
         System.out.println(name + " attacked " + enemy.name+ ".");
+        System.out.print(enemy.name + " has received: " + damageDealt +" damage." +" " + enemy.name+ " now has: " + enemy.health + " health left.");
     }
 
     protected int calcDamage() {
-        damageDealt = (int) Math.random()*(maxDamage-minDamage) + minDamage;
-        return damageDealt;
+        int damage = (int)(minDamage + Math.random()*(maxDamage));
+        return damage;
     }
 
 }

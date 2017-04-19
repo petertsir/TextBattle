@@ -6,9 +6,9 @@ import Items.*;
  */
 public class Hero extends Player {
     private Item[] inventory;
-    private int x;
-    private int y;
-    private int c;
+    private int x = (int) (10+ Math.random() * (500));
+    private int y = (int) (10 + Math.random() * (120));
+    private int c = (int) (10  + Math.random() * (120));
     private Item[] mageOptions = {new DamagePotion(x), new HealPotion(y), new ManaPotion(c), Empty.empty};
     private Item[] regOptions = {new DamagePotion(x), new HealPotion(y), Empty.empty};
 
@@ -27,7 +27,9 @@ public class Hero extends Player {
             this.inventory[i] = Empty.empty;
         }
     }
-
+    /**
+     * constructor
+     */
     public Hero(String name, int maxDamage, int minDamage, int inventorySize, int maxHealth) {
         super(name, maxHealth, maxDamage, minDamage);
         this.inventory = new Item[inventorySize];
@@ -46,16 +48,17 @@ public class Hero extends Player {
     }
 
     public void showInventory() {
-        for (Item item : inventory) {
-            System.out.print(item.toString());
+
+        for(int i = 0; i < inventory.length; i ++) {
+            System.out.print(i + ". " + inventory[i].toString() + "\n" );
         }
     }
     /**
     * accepts the true possition in the array(non-zero based) and the item
     * */
-    public String addToInventory(Item item, int itemIndex){
+    public void addToInventory(Item item, int itemIndex){
         inventory[itemIndex] = item;
-        return (item + " is in position " + itemIndex);
+        System.out.println(item.toString() + " is in position " + itemIndex);
     }
 
     public void addToInventory(Item item) {
@@ -74,13 +77,11 @@ public class Hero extends Player {
 
     }
 
-    public void randomizeItemPower() {
-        x = (int) (Math.random() * (500 - 10) + 500);
-        y = (int) (Math.random() * (120 - 10) + 120);
-        c = (int) (Math.random() * (120 - 10) + 120);
+    /*public void randomizeItemPower() {
+        this.x = (int) (Math.random() * (500 - 10) + 500);
+        this.y = (int) (10 + Math.random() * (120));
+        this.c = (int) (10  + Math.random() * (120));
 
     }
-
-
-
+    */
 }

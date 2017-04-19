@@ -13,11 +13,11 @@ public class Rogue extends Hero {
     @Override
     public void attack(Player enemy) {
         int loops = 1;
-        if (1 - Math.random() <= SECOND_ATTACK_CHANCE) {
+        if (Math.random() <= SECOND_ATTACK_CHANCE) {
             loops = 2;
         }
         for (int i = 1; i <= loops; i++) {
-            int damageDealt = getDamageDealt();
+            int damageDealt = calcDamage();
             enemy.setHealth(enemy.getHealth() - damageDealt);
             System.out.print(enemy.getName() + "has received: " + damageDealt + "." + " " + enemy.getName() + " now has: " + enemy.getName() + " health left.");
             if (loops == 2) {

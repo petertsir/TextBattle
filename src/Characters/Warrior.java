@@ -13,23 +13,15 @@ public class Warrior extends Hero{
     }
 
     @Override
-    public int getDamageDealt(){
-        int damageDealt = super.getDamageDealt();
-        if(1-Math.random() <= CRITCHANCE){
+    public int calcDamage(){
+        int damageDealt = super.calcDamage();
+        if(Math.random() <= CRITCHANCE){
             damageDealt *= 2;
-            System.out.println(this.getName() + "dealt a critical blow!");
+            System.out.println(this.getName() + " dealt a critical blow!");
         }
         return damageDealt;
     }
 
-    @Override
-    public void attack(Player enemy) {
-        int damageDealt = getDamageDealt();
-        int enemyHealth = enemy.getHealth();
 
-        enemy.setHealth(enemyHealth - damageDealt);
-        System.out.print(enemy.getName() + "has received: " + damageDealt + "." + " " + enemy.getName() + " now has: " + enemy.getHealth() + " health left.");
-
-    }
 }
 

@@ -4,9 +4,11 @@ package Items;
  */
 public class Empty extends Item{
     public final static Empty empty = new Empty();
-    public Empty() {
-        System.out.println("This spot in your inventory is empty.");
-    }
+    public Empty(){}
 
+    @Override
+    public String toString(){
+        return "Empty Slot";
+    }
 
 }

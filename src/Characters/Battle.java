@@ -17,6 +17,7 @@ public class Battle {
 
     public static void main(String[] args) {
         Battle battle = new Battle();
+        System.out.println();
         battle.createCharacter();
         battle.loadInventory();
         battle.createMonster();
@@ -48,22 +49,25 @@ public class Battle {
     public void createMonster() {
         Enemy[] enemies = {new Goblin(), new Dragon(), new EvilGriffin(), new Goblin(), new Goblin(), new Goblin(), new Goblin(), new EvilGriffin(), new EvilGriffin(), new EvilGriffin(), new Dragon()};
         this.enemy = enemies[(int) (Math.random() * (enemies.length - 0) + 0)];
-        System.out.println(hero.getName() + " has enountered a " + enemy.getName());
+        System.out.println();
+        System.out.println(hero.getName() + " has encountered a " + enemy.getName());
     }
 
     public void combat() {
         int roundNum = 1;
-        while (hero.getHealth() > 0 || enemy.getHealth()>0) {
+        while (hero.getHealth() > 0 && enemy.getHealth() > 0) {
             System.out.println("++++++++++++++++++++++++++++++++++++ ROUND " + roundNum + " ++++++++++++++++++++++++++++++++++++");
-            if (itemSelection() == true) {
-                System.out.println(hero.getName() + " used a " + hero.accessInventory(selection - 1) + "");
-            }
-            hero.attack(enemy);
-            enemy.receiveDamage(hero.getDamageDealt());
 
+            if (itemSelection() == false ) {
+                hero.attack(enemy);
+                System.out.println();
+             //   enemy.receiveDamage();
+                System.out.println();
+            }
             enemy.attack(hero);
-            hero.receiveDamage(enemy.getDamageDealt());
+           // hero.receiveDamage();
             roundNum++;
+            System.out.println();
         }
         if(hero.getHealth() > enemy.getHealth()){
             System.out.println(hero.getName()+ " wins!");
@@ -72,37 +76,47 @@ public class Battle {
     }
 
     public boolean itemSelection() {
+        System.out.println();
+        System.out.println("Your inventory contains the following items:");
         hero.showInventory();
         Scanner console = new Scanner(System.in);
-        System.out.println("Type an inventory slot number to use an item, or type 0 to skip: ");
+        System.out.println();
+        System.out.println("Type an inventory slot number to use an item, or type 0 to attack: ");
         this.selection = console.nextInt();
-        if (selection == 1) {
-            hero.useItem(0);
-            return true;
-        } else if (selection == 2) {
-            hero.useItem(1);
-            return true;
-        } else if (selection == 3) {
-            hero.useItem(2);
-            return true;
+        if (selection == 1 || selection == 2 || selection == 3) {
+            System.out.println(hero.getName() + " used a " + hero.accessInventory(selection - 1) + "");
+
+            if (selection == 1) {
+                hero.useItem(0);
+                return true;
+            } else if (selection == 2) {
+                hero.useItem(1);
+                return true;
+            } else if (selection == 3) {
+                hero.useItem(2);
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
     }
 
     public void loadInventory() {
-        hero.randomizeItemPower();
+        System.out.println("Your inventory has been stocked with the following items: ");
+        //hero.randomizeItemPower();
         Item[] mageOptions = hero.getMageOptions();
         Item[] regOptions = hero.getRegOptions();
         int randItem;
         if(hero.getClass().isAssignableFrom(Mage.class)) {
-            for (int i = 0; i <= mageOptions.length; i++) {
+            for (int i = 0; i < mageOptions.length; i++) {
                 randItem = (int) (Math.random() * (mageOptions.length));
                 hero.addToInventory(mageOptions[randItem], i);
             }
         }
         else{
-            for (int i = 0; i <= regOptions.length; i ++) {
+            for (int i = 0; i < regOptions.length; i ++) {
                 randItem = (int) ((Math.random() * (regOptions.length)));
                 hero.addToInventory(regOptions[randItem], i);
             }
