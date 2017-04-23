@@ -32,7 +32,7 @@ public class Battle {
         Scanner console = new Scanner(System.in);
         System.out.print("Choose a name for your character: ");
         String name = console.nextLine();
-        System.out.print("Choose a class for your character(1 for Warrior, 2 for Rogue, 3 for Mage): ");
+        System.out.print("Choose a class for your character(1 for Warrior, 2 for Mage, 3 for Rogue): ");
         int selection = console.nextInt();
         if (selection == 1) {
             Warrior warrior = new Warrior(name);
@@ -59,13 +59,15 @@ public class Battle {
             System.out.println("++++++++++++++++++++++++++++++++++++ ROUND " + roundNum + " ++++++++++++++++++++++++++++++++++++");
 
             if (itemSelection() == false ) {
-                hero.attack(enemy);
+                //hero.attack(enemy);
                 System.out.println();
-             //   enemy.receiveDamage();
+                //NOTE TO SELF: possible error may emerge here
+                enemy.receiveDamage(enemy, hero);
                 System.out.println();
             }
-            enemy.attack(hero);
-           // hero.receiveDamage();
+            //enemy.attack(hero);
+            //NOTE TO SELF: possible error may emerge here
+            hero.receiveDamage(hero, enemy);
             roundNum++;
             System.out.println();
         }

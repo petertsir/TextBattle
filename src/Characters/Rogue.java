@@ -13,17 +13,21 @@ public class Rogue extends Hero {
     @Override
     public void attack(Player enemy) {
         int loops = 1;
+        boolean secondAttackCondition = false;
         if (Math.random() <= SECOND_ATTACK_CHANCE) {
             loops = 2;
+            secondAttackCondition = true;
         }
         for (int i = 1; i <= loops; i++) {
-            int damageDealt = calcDamage();
-            enemy.setHealth(enemy.getHealth() - damageDealt);
-            System.out.print(enemy.getName() + "has received: " + damageDealt + "." + " " + enemy.getName() + " now has: " + enemy.getName() + " health left.");
-            if (loops == 2) {
-                System.out.println(this.getName() + "gets a second attack!");
+            super.attack(enemy);
+            if (secondAttackCondition) {
+                if (this.getHealth()== 0){
+                    System.out.println("\n" + this.getName() + " gets a second attack! *Que spooky music* FROM BEYOND THE GRAVE!!!");
+
+                }
+                System.out.println("\n" + this.getName() + " gets a second attack!");
+                secondAttackCondition = false;
             }
         }
     }
 }
-

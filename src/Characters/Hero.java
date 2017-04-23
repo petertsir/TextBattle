@@ -50,7 +50,7 @@ public class Hero extends Player {
     public void showInventory() {
 
         for(int i = 0; i < inventory.length; i ++) {
-            System.out.print(i + ". " + inventory[i].toString() + "\n" );
+            System.out.print(i+1 + ". " + inventory[i].toString() + "\n" );
         }
     }
     /**
@@ -76,12 +76,4 @@ public class Hero extends Player {
         }
 
     }
-
-    /*public void randomizeItemPower() {
-        this.x = (int) (Math.random() * (500 - 10) + 500);
-        this.y = (int) (10 + Math.random() * (120));
-        this.c = (int) (10  + Math.random() * (120));
-
-    }
-    */
 }

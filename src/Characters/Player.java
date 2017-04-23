@@ -66,11 +66,18 @@ public abstract class Player {
      * however, it doesn't serve any practical purpose.
      * */
 
-   /* public void receiveDamage(){
-        health -= damageDealt;
-        System.out.print(name + " has received: " + damageDealt +" damage." +" " + name + " now has: " + health + " health left.");
+    public void receiveDamage(Player hero, Player enemy){
+        if (enemy.getHealth() - hero.getDamageDealt() < 0){
+            enemy.setHealth(0);
+            System.out.println(name + " attacked " + enemy.name + ".");
+            System.out.print(enemy.name + " has received: " + hero.damageDealt+ " damage." + " " + enemy.name + " now has: " + enemy.health + " health left.");
+        }
+        else {
+            hero.attack(enemy);
+        }
+
     }
-    */
+
     public int getMaxHealth() {
         return maxHealth;
     }
@@ -80,11 +87,11 @@ public abstract class Player {
         this.health = maxHealth;
     }
 
-    public void attack(Player enemy){
-         setDamageDealt(calcDamage());
-        enemy.health -= getDamageDealt();
-        System.out.println(name + " attacked " + enemy.name+ ".");
-        System.out.print(enemy.name + " has received: " + damageDealt +" damage." +" " + enemy.name+ " now has: " + enemy.health + " health left.");
+    public void attack(Player enemy) {
+            setDamageDealt(calcDamage());
+            enemy.health -= getDamageDealt();
+            System.out.println(name + " attacked " + enemy.name + ".");
+            System.out.print(enemy.name + " has received: " + damageDealt + " damage." + " " + enemy.name + " now has: " + enemy.health + " health left.");
     }
 
     protected int calcDamage() {
