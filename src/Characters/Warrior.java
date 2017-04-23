@@ -6,7 +6,7 @@ import Items.Item;
  * Created by peter on 2/14/17.
  */
 public class Warrior extends Hero{
-    public final double CRITCHANCE = 0.10;
+    private final double CRITCHANCE = 0.10;
 
     public Warrior(String name) {
         super(name, 15, 0, 3, 150);

@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52605c97-6929-4d6e-8885-f857799ab34f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Text Battle/Characters/Battle.class" afterPath="$PROJECT_DIR$/out/production/Text Battle/Characters/Battle.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Text Battle/Characters/Hero.class" afterPath="$PROJECT_DIR$/out/production/Text Battle/Characters/Hero.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Text Battle/Characters/Player.class" afterPath="$PROJECT_DIR$/out/production/Text Battle/Characters/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Text Battle/Characters/Rogue.class" afterPath="$PROJECT_DIR$/out/production/Text Battle/Characters/Rogue.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Characters/Battle.java" afterPath="$PROJECT_DIR$/src/Characters/Battle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Characters/Hero.java" afterPath="$PROJECT_DIR$/src/Characters/Hero.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Characters/Player.java" afterPath="$PROJECT_DIR$/src/Characters/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Characters/Rogue.java" afterPath="$PROJECT_DIR$/src/Characters/Rogue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Characters/Warrior.java" afterPath="$PROJECT_DIR$/src/Characters/Warrior.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rogue.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Rogue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Characters/Rogue.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -84,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Warrior.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Warrior.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Characters/Warrior.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -164,12 +165,12 @@
         <option value="$PROJECT_DIR$/src/Items/Empty.java" />
         <option value="$PROJECT_DIR$/src/Items/DamagePotion.java" />
         <option value="$PROJECT_DIR$/src/Characters/Interface.java" />
-        <option value="$PROJECT_DIR$/src/Characters/Warrior.java" />
         <option value="$PROJECT_DIR$/src/Items/HealPotion.java" />
         <option value="$PROJECT_DIR$/src/Characters/Battle.java" />
         <option value="$PROJECT_DIR$/src/Characters/Hero.java" />
         <option value="$PROJECT_DIR$/src/Characters/Player.java" />
         <option value="$PROJECT_DIR$/src/Characters/Rogue.java" />
+        <option value="$PROJECT_DIR$/src/Characters/Warrior.java" />
       </list>
     </option>
   </component>
@@ -546,6 +547,14 @@
       <option name="presentableId" value="Default" />
       <updated>1487007349346</updated>
     </task>
+    <task id="LOCAL-00001" summary="Got rid of repeated code in Rogue class; &#10;made recieveDamage  in Player class a wrapper for attack;&#10; made sure health doesnt drop bellow 0 in combat&#10; Rogues second attack message only prints once from now on;">
+      <created>1492991116119</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1492991116119</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -587,6 +596,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Got rid of repeated code in Rogue class; &#10;made recieveDamage  in Player class a wrapper for attack;&#10; made sure health doesnt drop bellow 0 in combat&#10; Rogues second attack message only prints once from now on;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got rid of repeated code in Rogue class; &#10;made recieveDamage  in Player class a wrapper for attack;&#10; made sure health doesnt drop bellow 0 in combat&#10; Rogues second attack message only prints once from now on;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -726,8 +739,8 @@
         <state relative-caret-position="270">
           <caret line="20" column="9" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="20" selection-end-column="9" />
           <folding>
-            <element signature="e#192#193#0" expanded="false" />
-            <element signature="e#234#235#0" expanded="false" />
+            <element signature="e#193#194#0" expanded="false" />
+            <element signature="e#235#236#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -853,8 +866,8 @@
         <state relative-caret-position="45">
           <caret line="3" column="33" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="33" />
           <folding>
-            <element signature="e#192#193#0" expanded="false" />
-            <element signature="e#234#235#0" expanded="false" />
+            <element signature="e#193#194#0" expanded="false" />
+            <element signature="e#235#236#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1001,14 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Characters/Warrior.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Items/HealPotion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -1075,6 +1080,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Characters/Warrior.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding />
         </state>
       </provider>
