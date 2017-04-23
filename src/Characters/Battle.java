@@ -59,14 +59,10 @@ public class Battle {
             System.out.println("++++++++++++++++++++++++++++++++++++ ROUND " + roundNum + " ++++++++++++++++++++++++++++++++++++");
 
             if (itemSelection() == false ) {
-                //hero.attack(enemy);
                 System.out.println();
-                //NOTE TO SELF: possible error may emerge here
                 enemy.receiveDamage(enemy, hero);
                 System.out.println();
             }
-            //enemy.attack(hero);
-            //NOTE TO SELF: possible error may emerge here
             hero.receiveDamage(hero, enemy);
             roundNum++;
             System.out.println();
