@@ -95,7 +95,7 @@ public abstract class Player {
     }
 
     protected int calcDamage() {
-        int damage = (int)(minDamage + Math.random()*(maxDamage) +1);
+        int damage = (int)(minDamage + Math.random()*(maxDamage-minDamage +1));
         return damage;
     }
 
